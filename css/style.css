@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(134, 130, 127);
+}
+
+.header{
+    background-color: #24272D;
+}
+
+.container{
+    width: 1042px;
+    margin:auto;
+    height: 100px;
+}
+
+.icon-name{
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.header-inner{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu-list{
+    display: flex;
+    font-size: 24px;
+    margin-left: 224px;
+    list-style: none;
+}
+
+
+.menu-item{
+    margin-right: 20px;
+    margin-right: 40px;
+}
