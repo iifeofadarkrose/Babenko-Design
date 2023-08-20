@@ -1,8 +1,8 @@
-const menuBtn = document.querySelector('.btn-menu');
-const menuMobile = document.querySelector('.menu-list');
+const menuBtn = document.querySelector(".btn-menu");
+const menuMobile = document.querySelector(".menu-list");
 
-menuBtn.addEventListener(('click'), ()=>{
-    menuMobile.classList.toggle('menu-open')
+menuBtn.addEventListener("click", () => {
+  menuMobile.classList.toggle("menu-open");
 });
 
 // const heroBtn = document.querySelector('.hero-btn');
@@ -91,3 +91,38 @@ function formReset() {
     el.style.border = "none";
   });
 }
+
+
+$(document).ready(function () {
+  var currentSlide;
+  var slidesCount;
+  var sliderCounter = document.createElement("div");
+  sliderCounter.classList.add("slider__counter");
+
+  var updateSliderCounter = function (slick, currentIndex) {
+    currentSlide = slick.slickCurrentSlide() + 1;
+    slidesCount = slick.slideCount;
+    $(sliderCounter).text(currentSlide + "/" + slidesCount);
+  };
+
+  $(".slider").on("init", function (event, slick) {
+    $(".slider").append(sliderCounter);
+    updateSliderCounter(slick);
+  });
+
+  $(".slider").on("afterChange", function (event, slick, currentSlide) {
+    updateSliderCounter(slick, currentSlide);
+  });
+
+  $(".slider").slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "50px",
+    // autoplay: true,
+    // autoplaySpeed: 1500,
+  });
+  $(".slick-prev").text("❯");
+  $(".slick-next").text("❯");
+});
