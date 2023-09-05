@@ -910,7 +910,7 @@ h2.title:after{
   transform: scale(1.2);
 }
 .gallery-item img{
-  max-width: 100%;
+  width: 100%;
   height: auto;
   transition: all .5s ease;
 }
